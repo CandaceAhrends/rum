@@ -1,0 +1,21 @@
+<nav
+  class="fixed bottom-0 w-full sm:relative sm:h-full"
+  aria-label="Footer Navigation"
+>
+  <ul class="flex justify-center gap-5 sm:flex-col sm:gap-2 sm:w-10">
+    @for(item of menuItems; track item.label ) {
+    <li
+      class="p-3 hover:text-blue-200 hover:cursor-pointer"
+      routerLinkActive="active"
+    >
+      <a
+        [routerLink]="item.link"
+        routerLinkActive="text-blue-200"
+        ariaCurrentWhenActive
+      >
+        <ng-container *ngComponentOutlet="item.icon"></ng-container>
+      </a>
+    </li>
+    }
+  </ul>
+</nav>
